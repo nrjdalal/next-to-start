@@ -28,7 +28,7 @@ npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-basic next
 ```
 
 > [!Important]
-> For advanced features like API routes, links, params, paths, and more, refer to the [Next Steps (Advanced)](#next-steps-advanced) section at the end of this guide.
+> For advanced features like dynamic routes, links, server actions, route handlers and more, refer to the [Next Steps (Advanced)](#next-steps-advanced) section at the end of this guide.
 
 ## Uninstall Next.js
 
