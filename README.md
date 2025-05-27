@@ -78,7 +78,7 @@ export default defineConfig({
 > [!Note]
 > By default, TanStack Start uses the `src/routes` directory to store your routes. If you want to use a different directory, you can specify it in the `tanstackStart` plugin options as shown above.
 
-To work with Tailwind CSS, create a `postcss.config.js` file in the root of your project:
+To work with Tailwind CSS V4, create a `postcss.config.js` file in the root of your project:
 
 ```ts
 // postcss.config.js
