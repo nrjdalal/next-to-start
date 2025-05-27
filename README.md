@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
+id: migrate-from-next-js-app-router
+title: Migrate from Next.js App Router
+---
 
-## Getting Started
+To migrate your project from the Next.js App Router to TanStack Start, follow these steps:
 
-First, run the development server:
+1. **Remove Next.js**
+   Uninstall the `next` package and delete its configuration:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   npm uninstall next
+   rm next.config.*
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install TanStack Start and Router**
+   Add the necessary dependencies and Vite:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm install @tanstack/react-start@alpha @tanstack/react-router@alpha vite
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Configure Vite**
+   Create or update `vite.config.ts` to include the `tanstackStart` plugin and point to your routes directory:
 
-## Learn More
+   ```ts
+   import { defineConfig } from "vite"
+   import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 
-To learn more about Next.js, take a look at the following resources:
+   export default defineConfig({
+     server: {
+       port: 3000,
+     },
+     plugins: [
+       tanstackStart({
+         tsr: {
+           // Use "src/app" instead of the default "src/routes"
+           routesDirectory: "src/app",
+         },
+       }),
+     ],
+   })
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   > **Note**
+   > By default, TanStack Start expects a `src/routes` directory. If your project uses `src/app` (as in Next.js), specify it with the `routesDirectory` option.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Update `package.json`**
+   Ensure your project is set to ES modules and update the scripts:
 
-## Deploy on Vercel
+   ```json
+   {
+     "type": "module",
+     "scripts": {
+       "dev": "vite dev",
+       "build": "vite build"
+     }
+   }
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Adjust `.gitignore`**
+   Add TanStack Start output folders to prevent committing build artifacts:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```gitignore
+   # tanstack
+   .nitro
+   .output
+   .tanstack-start
+   ```
