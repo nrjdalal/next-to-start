@@ -278,5 +278,12 @@ function Component() {
 - Server ~Actions~ Functions
 
 ```diff
+- 'use server'
++ import { createServerFn } from '@tanstack/react-start'
 
+- export const create = async () => {
++ export const getData = createServerFn().handler(async () => {
+  return true
+- }
++ })
 ```
