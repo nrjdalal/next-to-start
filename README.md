@@ -339,7 +339,7 @@ The following sections provide example code snippets for common migration tasks.
 
 - ### Font
 
-  Instead of using the `next/font` package, use recommended Tailwind CSS V4 approach i.e. CSS First approach.
+  Instead of using the `next/font` package, use recommended Tailwind CSS V4 approach i.e. CSS-first configuration.
 
   ```diff
   - import { Inter } from "next/font/google"
