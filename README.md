@@ -9,10 +9,11 @@ This guide will help you migrate your Next.js App Router application to TanStack
 
 ### Uninstall Next.js
 
-Uninstall Next.js and remove its configuration files.
+Uninstall Next.js and remove existing configuration files.
 
 ```shell
-npm uninstall next && rm next.config.*
+npm uninstall @eslint/eslintrc eslint eslint-config-next next
+rm eslint.config.* next.config.* postcss.config.*
 ```
 
 ### Install Dependencies
@@ -22,8 +23,11 @@ TanStack Start is powered by [Vite](https://vite.dev) and [TanStack Router](http
 To install them, run:
 
 ```shell
-npm i @tanstack/react-start @tanstack/react-router vite && npm i -D vite-tsconfig-paths
+npm i @tanstack/react-router@alpha @tanstack/react-start@alpha react react-dom vite && npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 ```
+
+> [!Note]
+> The `@alpha` tag will be removed once the packages are stable.
 
 ### Create/Update Configuration Files
 
@@ -68,6 +72,17 @@ export default defineConfig({
 > [!Note]
 > By default, TanStack Start uses the `src/routes` directory to store your routes. If you want to use a different directory, you can specify it in the `tanstackStart` plugin options as shown above.
 
+To work with Tailwind CSS, create a `postcss.config.js` file in the root of your project:
+
+```ts
+// postcss.config.js
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+}
+```
+
 ### Create/Update Root Layout
 
 Create or rename `layout.tsx` to `__root.tsx` and update the content. This file will serve as the root layout for your application, similar to how `layout.tsx` works in Next.js.
@@ -76,7 +91,8 @@ Create or rename `layout.tsx` to `__root.tsx` and update the content. This file 
 - // src/app/layout.tsx
 // src/app/__root.tsx
 
-- import "./globals.css"
+
+
 - import type { Metadata } from "next"
 import {
   Outlet,
@@ -84,6 +100,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router"
+import "./globals.css"
 
 - export const metadata: Metadata = {
 -   title: "Create Next App",
