@@ -249,7 +249,7 @@ npm run dev
 
 If everything is set up correctly, you should see the TanStack Start home page with the logo and a link to the documentation in your browser at `http://localhost:3000`.
 
-- If you face any issues, double-check the steps above and ensure that all files are correctly named and located in the appropriate directories. Refer to https://github.com/nrjdalal/next-to-start for a complete example of the migration.
+> If you face any issues, double-check the steps above and ensure that all files are correctly named and located in the appropriate directories. Refer to https://github.com/nrjdalal/next-to-start for a complete example of the migration.
 
 ---
 
