@@ -260,6 +260,24 @@ The following sections provide example code snippets for common migration tasks.
 > [!Note]
 > For more details and advanced usage, refer to the linked documentation in each header.
 
+- ### [Dynamic Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments)
+
+  ```diff
+  - export default async function Page({
+  -   params,
+  - }: {
+  -   params: Promise<{ slug: string }>
+  - }) {
+  + export const Route = createFileRoute({
+  +   component: Home,
+  + })
+
+  + function Page() {
+    const { slug } = Route.useParams()
+    return <div>My Post: {slug}</div>
+  }
+  ```
+
 - ### [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
 
   ```diff
