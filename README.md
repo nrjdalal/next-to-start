@@ -6,6 +6,7 @@ title: Migrate from Next.js App Router
 To migrate your project from the Next.js App Router to TanStack Start, follow these steps:
 
 1. **Remove Next.js**
+
    Uninstall the `next` package and delete its configuration:
 
    ```bash
@@ -14,6 +15,7 @@ To migrate your project from the Next.js App Router to TanStack Start, follow th
    ```
 
 2. **Install TanStack Start and Router**
+
    Add the necessary dependencies and Vite:
 
    ```bash
@@ -21,6 +23,7 @@ To migrate your project from the Next.js App Router to TanStack Start, follow th
    ```
 
 3. **Configure Vite**
+
    Create or update `vite.config.ts` to include the `tanstackStart` plugin and point to your routes directory:
 
    ```ts
@@ -46,6 +49,7 @@ To migrate your project from the Next.js App Router to TanStack Start, follow th
    > By default, TanStack Start expects a `src/routes` directory. If your project uses `src/app` (as in Next.js), specify it with the `routesDirectory` option.
 
 4. **Update `package.json`**
+
    Ensure your project is set to ES modules and update the scripts:
 
    ```json
@@ -59,6 +63,7 @@ To migrate your project from the Next.js App Router to TanStack Start, follow th
    ```
 
 5. **Adjust `.gitignore`**
+
    Add TanStack Start output folders to prevent committing build artifacts:
 
    ```gitignore
