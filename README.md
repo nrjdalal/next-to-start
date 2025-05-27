@@ -15,6 +15,17 @@ title: Migrate from Next.js App Router
 
 # Migrate from Next.js App Router to TanStack Start (Basics)
 
+This guide helps you migrate a Next.js App Router project to TanStack Start. You'll learn how to set up TanStack Start and adapt your existing Next.js code.
+
+To get started, use this Next.js App Router starter template:
+
+```shell
+npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js next.js-start-er
+```
+
+> [!Important]
+> For advanced features like API routes, links, params, paths, and more, refer to the [Next Steps (Advanced)](#next-steps-advanced) section at the end of this guide.
+
 ## Uninstall Next.js
 
 Uninstall Next.js and remove existing configuration files.
