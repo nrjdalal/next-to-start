@@ -76,8 +76,8 @@ Create or rename your root layout file to `src/app/__root.tsx`. This file will s
 - // src/app/layout.tsx
 // src/app/__root.tsx
 
-- import type { Metadata } from "next"
 - import "./globals.css"
+- import type { Metadata } from "next"
 import {
   Outlet,
   createRootRoute,
