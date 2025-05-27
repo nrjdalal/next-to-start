@@ -12,8 +12,8 @@ This guide will help you migrate your Next.js App Router application to TanStack
 Uninstall Next.js and remove existing configuration files.
 
 ```shell
-npm uninstall @eslint/eslintrc eslint eslint-config-next next
-rm eslint.config.* next.config.* postcss.config.*
+npm uninstall next
+rm next.config.* postcss.config.*
 ```
 
 ## Install Dependencies
