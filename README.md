@@ -23,7 +23,8 @@ TanStack Start is powered by [Vite](https://vite.dev) and [TanStack Router](http
 To install them, run:
 
 ```shell
-npm i @tanstack/react-router@alpha @tanstack/react-start@alpha react react-dom vite && npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
+npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
+npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 ```
 
 > [!Note]
