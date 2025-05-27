@@ -250,19 +250,6 @@ If everything is set up correctly, you should see the TanStack Start home page w
 
 # Next Steps (Advanced)
 
-## Components
-
-- [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
-
-```diff
-- export async function GET() {
-+ export const ServerRoute = createServerFileRoute().methods({
-+   GET: async () => {
-    return Response.json("Hello, World!")
-  }
-+ })
-```
-
 - [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
 
 ```diff
@@ -285,5 +272,16 @@ function Component() {
 + export const create = createServerFn().handler(async () => {
   return true
 - }
++ })
+```
+
+- [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
+
+```diff
+- export async function GET() {
++ export const ServerRoute = createServerFileRoute().methods({
++   GET: async () => {
+    return Response.json("Hello, World!")
+  }
 + })
 ```
