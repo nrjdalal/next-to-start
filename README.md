@@ -354,7 +354,7 @@ The following sections provide example code snippets for common migration tasks.
   - }
   ```
 
-  Install the required font packages as dev dependencies:
+  Install the required local font packages as dev dependencies:
 
   ```shell
   npm i -D @fontsource-variable/dm-sans @fontsource-variable/jetbrains-mono
