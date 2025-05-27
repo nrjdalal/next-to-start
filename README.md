@@ -214,6 +214,8 @@ Create or rename `page.tsx` to `index.tsx` and update the content. This file wil
 One last thing to do is to create `src/router.tsx`. This is the file that will dictate the behavior of TanStack Router used within Start. Here, you can configure everything from the default [preloading functionality](https://github.com/TanStack/router/blob/alpha/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://github.com/TanStack/router/blob/alpha/router/latest/docs/framework/react/guide/data-loading).
 
 ```tsx
+// src/router.tsx
+
 import { createRouter as createTanStackRouter } from "@tanstack/react-router"
 import { routeTree } from "./routeTree.gen"
 
