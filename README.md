@@ -65,7 +65,8 @@ We'll then update our `package.json` to use Vite and set `"type": "module"`:
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build"
+    "build": "vite build",
+    "start": "node .output/server/index.mjs"
   }
 }
 ```
