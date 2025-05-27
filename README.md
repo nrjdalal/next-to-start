@@ -3,6 +3,16 @@ id: migrate-from-next-js-app-router
 title: Migrate from Next.js App Router
 ---
 
+## Table of Contents
+
+- [Migrate from Next.js App Router to TanStack Start](#migrate-from-nextjs-app-router-to-tanstack-start)
+  - [Uninstall Next.js](#uninstall-nextjs)
+  - [Install Dependencies](#install-dependencies)
+  - [Update Configuration Files](#update-configuration-files)
+  - [Update Root Layout](#update-root-layout)
+  - [Update Home Page aka `/`](#update-home-page-aka-)
+  - [Are we migrated yet?](#are-we-migrated-yet)
+
 # Migrate from Next.js App Router to TanStack Start
 
 This guide will help you migrate your Next.js App Router application to TanStack Start.
@@ -35,7 +45,7 @@ Some dev dependencies are also required for TypeScript support, path aliases, an
 npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 ```
 
-## Create/Update Configuration Files
+## Update Configuration Files
 
 We'll then update our `package.json` to use Vite and set `"type": "module"`:
 
@@ -91,7 +101,7 @@ export default {
 }
 ```
 
-## Create/Update Root Layout
+## Update Root Layout
 
 Create or rename `layout.tsx` to `__root.tsx` and update the content. This file will serve as the root layout for your application, similar to how `layout.tsx` works in Next.js.
 
@@ -155,7 +165,7 @@ function RootLayout() {
 }
 ```
 
-## Create/Update Home Page aka `/`
+## Update Home Page aka `/`
 
 Create or rename `page.tsx` to `index.tsx` and update the content. This file will serve as the home page of your application, similar to how `page.tsx` works in Next.js.
 
@@ -190,6 +200,26 @@ Create or rename `page.tsx` to `index.tsx` and update the content. This file wil
 }
 ```
 
----
+## Are we migrated yet?
 
-# Migrated yet?
+One last thing to do is to create `src/router.tsx`. This is the file that will dictate the behavior of TanStack Router used within Start. Here, you can configure everything from the default preloading functionality to caching staleness.
+
+```tsx
+import { createRouter as createTanStackRouter } from "@tanstack/react-router"
+import { routeTree } from "./routeTree.gen"
+
+export function createRouter() {
+  const router = createTanStackRouter({
+    routeTree,
+    scrollRestoration: true,
+  })
+
+  return router
+}
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: ReturnType<typeof createRouter>
+  }
+}
+```
