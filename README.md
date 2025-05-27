@@ -250,6 +250,8 @@ If everything is set up correctly, you should see the TanStack Start home page w
 
 # Next Steps (Advanced)
 
+The following sections provide example code snippets for common migration tasks. For more details and advanced usage, refer to the linked documentation in each header.
+
 - [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
 
 ```diff
