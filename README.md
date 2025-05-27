@@ -275,7 +275,7 @@ function Component() {
 }
 ```
 
-- Server ~Actions~ Functions
+- [Server ~Actions~ Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-functions.md)
 
 ```diff
 - 'use server'
