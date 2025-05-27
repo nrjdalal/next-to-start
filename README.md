@@ -37,12 +37,12 @@ npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 
 ## Create/Update Configuration Files
 
-We'll then update our `package.json` to use Vite's CLI and set `"type": "module"`:
+We'll then update our `package.json` to use Vite and set `"type": "module"`:
 
 ```json
 // package.json
+
 {
-  // ...
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -55,6 +55,7 @@ Then configure TanStack Start's Vite plugin in `vite.config.ts`:
 
 ```ts
 // vite.config.ts
+
 import { defineConfig } from "vite"
 import tsConfigPaths from "vite-tsconfig-paths"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
@@ -78,10 +79,11 @@ export default defineConfig({
 > [!Note]
 > By default, TanStack Start uses the `src/routes` directory to store your routes. If you want to use a different directory, you can specify it in the `tanstackStart` plugin options as shown above.
 
-To work with Tailwind CSS V4, create a `postcss.config.js` file in the root of your project:
+To work with Tailwind CSS V4, create a `postcss.config.ts` file in the root of your project:
 
 ```ts
-// postcss.config.js
+// postcss.config.ts
+
 export default {
   plugins: {
     "@tailwindcss/postcss": {},
@@ -187,3 +189,7 @@ Create or rename `page.tsx` to `index.tsx` and update the content. This file wil
   )
 }
 ```
+
+---
+
+# Migrated yet?
