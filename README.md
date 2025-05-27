@@ -273,6 +273,7 @@ The following sections provide example code snippets for common migration tasks.
   + })
 
   + function Page() {
+  -   const { slug } = await params
   +   const { slug } = Route.useParams()
     return <div>My Post: {slug}</div>
   }
