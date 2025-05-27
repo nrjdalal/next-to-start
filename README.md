@@ -102,16 +102,8 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  component: RootComponent,
+  component: RootLayout,
 })
-
-function RootComponent() {
-  return (
-    <RootLayout>
-      <Outlet />
-    </RootLayout>
-  )
-}
 
 - export default function RootLayout({
 -   children,
@@ -124,14 +116,14 @@ function RootComponent() {
 -     </html>
 -   )
 - }
-function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+function RootLayout() {
   return (
-    <html>
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
       <body>
-        {children}
+        <Outlet />
         <Scripts />
       </body>
     </html>
