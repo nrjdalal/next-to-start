@@ -3,7 +3,7 @@ id: migrate-from-next-js-app-router
 title: Migrate from Next.js App Router
 ---
 
-- [Migrate from Next.js App Router](#migrate-from-nextjs-app-router)
+- [Migrate from Next.js App Router (Basics)](#migrate-from-nextjs-app-router-basics)
   - [Uninstall Next.js](#uninstall-nextjs)
   - [Install Dependencies](#install-dependencies)
   - [Update Configuration Files](#update-configuration-files)
