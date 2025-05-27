@@ -70,7 +70,7 @@ export default defineConfig({
 
 ### Create/Update Root Layout
 
-Create or rename your root layout file to `src/app/__root.tsx`. This file will serve as the root layout for your application, similar to how `layout.tsx` works in Next.js.
+Create or rename `layout.tsx` to `__root.tsx` and update the content. This file will serve as the root layout for your application, similar to how `layout.tsx` works in Next.js.
 
 ```diff
 - // src/app/layout.tsx
