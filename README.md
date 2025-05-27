@@ -45,8 +45,8 @@ To migrate your project from the Next.js App Router to TanStack Start, follow th
    })
    ```
 
-   > [!Note]
-   > By default, TanStack Start expects a `src/routes` directory. If your project uses `src/app` (as in Next.js), specify it with the `routesDirectory` option.
+> [!Note]
+> By default, TanStack Start expects a `src/routes` directory. If your project uses `src/app` (as in Next.js), specify it with the `routesDirectory` option.
 
 4. **Update `package.json`**
 
