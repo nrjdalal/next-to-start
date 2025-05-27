@@ -280,6 +280,8 @@ function Component() {
 + })
 ```
 
+Also try, [Static Server Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/static-server-functions.md).
+
 - [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
 
 ```diff
