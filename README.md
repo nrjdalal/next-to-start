@@ -354,7 +354,7 @@ The following sections provide example code snippets for common migration tasks.
   - }
   ```
 
-  Install the required local fonts (e.g. [Fontsource](https://github.com/fontsource/fontsource)) and install them as dev dependencies:
+  Select the required local fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)) and install them as dev dependencies:
 
   ```shell
   npm i -D @fontsource-variable/dm-sans @fontsource-variable/jetbrains-mono
