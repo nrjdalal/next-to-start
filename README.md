@@ -257,38 +257,38 @@ The following sections provide example code snippets for common migration tasks.
 
 - [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
 
-```diff
-- import Link from "next/link"
-+ import { Link } from "@tanstack/react-router"
+  ```diff
+  - import Link from "next/link"
+  + import { Link } from "@tanstack/react-router"
 
-function Component() {
--   return <Link href="/dashboard">Dashboard</Link>
-+   return <Link to="/dashboard">Dashboard</Link>
-}
-```
+  function Component() {
+  -   return <Link href="/dashboard">Dashboard</Link>
+  +   return <Link to="/dashboard">Dashboard</Link>
+  }
+  ```
 
 - [Server ~Actions~ Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-functions.md)
 
-```diff
-- 'use server'
-+ import { createServerFn } from '@tanstack/react-start'
+  ```diff
+  - 'use server'
+  + import { createServerFn } from '@tanstack/react-start'
 
-- export const create = async () => {
-+ export const create = createServerFn().handler(async () => {
-  return true
-- }
-+ })
-```
+  - export const create = async () => {
+  + export const create = createServerFn().handler(async () => {
+    return true
+  - }
+  + })
+  ```
 
-Also try, [Static Server Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/static-server-functions.md).
+  Also try, [Static Server Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/static-server-functions.md).
 
 - [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
 
-```diff
-- export async function GET() {
-+ export const ServerRoute = createServerFileRoute().methods({
-+   GET: async () => {
-    return Response.json("Hello, World!")
-  }
-+ })
-```
+  ```diff
+  - export async function GET() {
+  + export const ServerRoute = createServerFileRoute().methods({
+  +   GET: async () => {
+      return Response.json("Hello, World!")
+    }
+  + })
+  ```
