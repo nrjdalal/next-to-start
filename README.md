@@ -252,27 +252,25 @@ If everything is set up correctly, you should see the TanStack Start home page w
 
 ## Components
 
-- [ ] Directives
+- Link
 
-  - [ ] use cache
-  - [ ] use client
-  - [ ] use server
+```diff
+- import Link from "next/link"
++ import { Link } from "@tanstack/react-router"
 
-- [ ] Components
+function Component() {
+-   return <Link href="/dashboard">Dashboard</Link>
++   return <Link to="/dashboard">Dashboard</Link>
+}
+```
 
-  - [ ] Font
-  - [ ] Form
-  - [ ] Image
-  - [x] Link
+- API Routes
 
-    ```diff
-    - import Link from "next/link"
-    + import { Link } from "@tanstack/react-router"
-
-    function Component() {
-    -   return <Link href="/dashboard">Dashboard</Link>
-    +   return <Link to="/dashboard">Dashboard</Link>
-    }
-    ```
-
-  - [ ] Script
+```diff
+- export async function GET() {
+export const ServerRoute = createServerFileRoute().methods({
+  GET: async () => {
+    return Response.json("Hello, World!")
+  }
+})
+```
