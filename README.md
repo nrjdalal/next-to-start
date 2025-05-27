@@ -362,7 +362,7 @@ The following sections provide example code snippets for common migration tasks.
 
   Then, update your `globals.css` to include the font imports:
 
-  ```css
+  ```diff
   /* src/app/globals.css */
 
   @import "tailwindcss";
