@@ -250,4 +250,16 @@ If everything is set up correctly, you should see the TanStack Start home page w
 
 # Next Steps (Advanced)
 
-Will be adding API routes, link, params, paths and more in the future.
+## Components
+
+- ## Link
+
+```diff
+- import Link from "next/link"
++ import { Link } from "@tanstack/react-router"
+
+function Component() {
+-   return <Link href="/dashboard">Dashboard</Link>
++   return <Link to="/dashboard">Dashboard</Link>
+}
+```
