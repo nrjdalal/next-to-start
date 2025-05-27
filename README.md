@@ -12,6 +12,7 @@ title: Migrate from Next.js App Router
   - [Are we migrated yet?](#are-we-migrated-yet)
   - [Test Your Migration](#test-your-migration)
 - [Next Steps (Advanced)](#next-steps-advanced)
+  - [Routing Concepts](#routing-concepts)
   - [Dynamic Routes](#dynamic-routes)
   - [Link](#link)
   - [Server ~Actions~ Functions](#server-actions-functions)
