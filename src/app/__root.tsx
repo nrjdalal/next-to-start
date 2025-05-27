@@ -25,13 +25,13 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <RootDocument>
+    <RootLayout>
       <Outlet />
-    </RootDocument>
+    </RootLayout>
   )
 }
 
-function RootDocument({ children }: Readonly<{ children: React.ReactNode }>) {
+function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html>
       <head>
