@@ -367,12 +367,12 @@ The following sections provide example code snippets for common migration tasks.
 
   @import "tailwindcss";
 
-  @import "@fontsource-variable/dm-sans";
-  @import "@fontsource-variable/jetbrains-mono";
+  + @import "@fontsource-variable/dm-sans";
+  + @import "@fontsource-variable/jetbrains-mono";
 
   @theme inline {
-    --font-sans: "DM Sans Variable", sans-serif;
-    --font-mono: "JetBrains Mono Variable", monospace;
+  +   --font-sans: "DM Sans Variable", sans-serif;
+  +   --font-mono: "JetBrains Mono Variable", monospace;
     /* ... */
   }
 
