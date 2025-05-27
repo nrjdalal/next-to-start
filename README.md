@@ -160,14 +160,14 @@ Create or rename `page.tsx` to `index.tsx` and update the content. This file wil
 
 ```diff
 - // src/app/page.tsx
-// src/app/index.tsx
++ // src/app/index.tsx
 
 - export default function Home() {
-export const Route = createFileRoute({
-  component: Home,
-})
++ export const Route = createFileRoute({
++   component: Home,
++ })
 
-function Home() {
++ function Home() {
   return (
     <main className="min-h-dvh w-screen flex items-center justify-center flex-col gap-y-4 p-4">
       <img
