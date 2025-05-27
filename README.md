@@ -165,7 +165,7 @@ function RootLayout() {
 }
 ```
 
-## Update Home Page aka `/`
+## Update Home Page
 
 Create or rename `page.tsx` to `index.tsx` and update the content. This file will serve as the home page of your application, similar to how `page.tsx` works in Next.js.
 
@@ -202,7 +202,7 @@ Create or rename `page.tsx` to `index.tsx` and update the content. This file wil
 
 ## Are we migrated yet?
 
-One last thing to do is to create `src/router.tsx`. This is the file that will dictate the behavior of TanStack Router used within Start. Here, you can configure everything from the default preloading functionality to caching staleness.
+One last thing to do is to create `src/router.tsx`. This is the file that will dictate the behavior of TanStack Router used within Start. Here, you can configure everything from the default [preloading functionality](https://github.com/TanStack/router/blob/alpha/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://github.com/TanStack/router/blob/alpha/router/latest/docs/framework/react/guide/data-loading).
 
 ```tsx
 import { createRouter as createTanStackRouter } from "@tanstack/react-router"
