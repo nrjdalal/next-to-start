@@ -4,9 +4,9 @@ export const Route = createFileRoute({
 
 function Home() {
   return (
-    <main className="min-h-dvh w-screen flex items-center justify-center flex-col gap-y-4 p-4">
+    <main className="flex min-h-dvh w-screen flex-col items-center justify-center gap-y-4 p-4">
       <img
-        className="max-w-sm w-full"
+        className="w-full max-w-sm"
         src="https://tanstack.com/assets/splash-dark-8nwlc0Nt.png"
         alt="TanStack Logo"
       />

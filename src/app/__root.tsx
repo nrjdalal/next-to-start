@@ -1,8 +1,8 @@
 import "./globals.css"
 import {
-  Outlet,
   createRootRoute,
   HeadContent,
+  Outlet,
   Scripts,
 } from "@tanstack/react-router"
 
