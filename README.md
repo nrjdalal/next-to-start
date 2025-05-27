@@ -3,17 +3,17 @@ id: migrate-from-next-js-app-router
 title: Migrate from Next.js App Router
 ---
 
-## Table of Contents
-
-- [Migrate from Next.js App Router to TanStack Start](#migrate-from-nextjs-app-router-to-tanstack-start)
+- [Migrate from Next.js App Router to TanStack Start (Basics)](#migrate-from-nextjs-app-router-to-tanstack-start-basics)
   - [Uninstall Next.js](#uninstall-nextjs)
   - [Install Dependencies](#install-dependencies)
   - [Update Configuration Files](#update-configuration-files)
   - [Update Root Layout](#update-root-layout)
   - [Update Home Page aka `/`](#update-home-page-aka-)
   - [Are we migrated yet?](#are-we-migrated-yet)
+  - [Test Your Migration](#test-your-migration)
+- [Next Steps (Advanced)](#next-steps-advanced)
 
-# Migrate from Next.js App Router to TanStack Start
+# Migrate from Next.js App Router to TanStack Start (Basics)
 
 This guide will help you migrate your Next.js App Router application to TanStack Start.
 
@@ -223,3 +223,17 @@ declare module "@tanstack/react-router" {
   }
 }
 ```
+
+## Test Your Migration
+
+To start your application, run the following command in your terminal:
+
+```shell
+npm run dev
+```
+
+If everything is set up correctly, you should see the TanStack Start home page with the logo and a link to the documentation in your browser at `http://localhost:3000`.
+
+---
+
+# Next Steps (Advanced)
