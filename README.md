@@ -268,9 +268,9 @@ function Component() {
 
 ```diff
 - export async function GET() {
-export const ServerRoute = createServerFileRoute().methods({
-  GET: async () => {
++ export const ServerRoute = createServerFileRoute().methods({
++   GET: async () => {
     return Response.json("Hello, World!")
   }
-})
++ })
 ```
