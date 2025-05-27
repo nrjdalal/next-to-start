@@ -24,11 +24,16 @@ To install them, run:
 
 ```shell
 npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
-npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 ```
 
 > [!Note]
 > The `@alpha` tag will be removed once the packages are stable.
+
+Some dev dependencies are also required for TypeScript support, path aliases, and Tailwind CSS:
+
+```shell
+npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
+```
 
 ### Create/Update Configuration Files
 
