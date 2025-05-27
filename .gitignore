@@ -46,5 +46,6 @@ next-env.d.ts
 /.tanstack-start
 
 # auto-generated files
+bun.lock
 routeTree.gen.ts
 tanstack-start.d.ts
