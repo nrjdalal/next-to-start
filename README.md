@@ -252,6 +252,17 @@ If everything is set up correctly, you should see the TanStack Start home page w
 
 ## Components
 
+- API Routes
+
+```diff
+- export async function GET() {
++ export const ServerRoute = createServerFileRoute().methods({
++   GET: async () => {
+    return Response.json("Hello, World!")
+  }
++ })
+```
+
 - Link
 
 ```diff
@@ -264,13 +275,8 @@ function Component() {
 }
 ```
 
-- API Routes
+- Server ~Actions~ Functions
 
 ```diff
-- export async function GET() {
-+ export const ServerRoute = createServerFileRoute().methods({
-+   GET: async () => {
-    return Response.json("Hello, World!")
-  }
-+ })
+
 ```
