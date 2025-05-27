@@ -282,7 +282,7 @@ function Component() {
 + import { createServerFn } from '@tanstack/react-start'
 
 - export const create = async () => {
-+ export const getData = createServerFn().handler(async () => {
++ export const create = createServerFn().handler(async () => {
   return true
 - }
 + })
