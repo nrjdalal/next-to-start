@@ -22,9 +22,9 @@ Add the necessary dependencies and Vite:
 npm install @tanstack/react-start@alpha @tanstack/react-router@alpha vite
 ```
 
-3. **Configure Vite**
+3. **Create `vite.config.ts`**
 
-Create or update `vite.config.ts` to include the `tanstackStart` plugin and point to your routes directory:
+Create `vite.config.ts` to include the `tanstackStart` plugin and point to your routes directory:
 
 ```ts
 import { defineConfig } from "vite"
