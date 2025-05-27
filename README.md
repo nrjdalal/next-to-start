@@ -94,8 +94,7 @@ export default {
 Create or rename `layout.tsx` to `__root.tsx` and update the content. This file will serve as the root layout for your application, similar to how `layout.tsx` works in Next.js.
 
 ```diff
-- // src/app/layout.tsx
-// src/app/__root.tsx
+// src/app/layout.tsx -> src/app/__root.tsx
 
 - import type { Metadata } from "next"
 import {
@@ -159,8 +158,7 @@ function RootLayout() {
 Create or rename `page.tsx` to `index.tsx` and update the content. This file will serve as the home page of your application, similar to how `page.tsx` works in Next.js.
 
 ```diff
-- // src/app/page.tsx
-+ // src/app/index.tsx
+// src/app/page.tsx -> src/app/index.tsx
 
 - export default function Home() {
 + export const Route = createFileRoute({
