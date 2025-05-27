@@ -44,3 +44,7 @@ next-env.d.ts
 /.nitro
 /.output
 /.tanstack-start
+
+# auto-generated files
+routeTree.gen.ts
+tanstack-start.d.ts
