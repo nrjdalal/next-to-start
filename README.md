@@ -97,8 +97,6 @@ Create or rename `layout.tsx` to `__root.tsx` and update the content. This file 
 - // src/app/layout.tsx
 // src/app/__root.tsx
 
-
-
 - import type { Metadata } from "next"
 import {
   Outlet,
