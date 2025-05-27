@@ -252,7 +252,7 @@ If everything is set up correctly, you should see the TanStack Start home page w
 
 ## Components
 
-- API Routes
+- [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
 
 ```diff
 - export async function GET() {
@@ -263,7 +263,7 @@ If everything is set up correctly, you should see the TanStack Start home page w
 + })
 ```
 
-- Link
+- [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
 
 ```diff
 - import Link from "next/link"
