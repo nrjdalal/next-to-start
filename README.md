@@ -12,6 +12,9 @@ title: Migrate from Next.js App Router
   - [Are we migrated yet?](#are-we-migrated-yet)
   - [Test Your Migration](#test-your-migration)
 - [Next Steps (Advanced)](#next-steps-advanced)
+  - [Link](#link)
+  - [Server ~Actions~ Functions](#server-actions-functions)
+  - [Server Routes ~Handlers~](#server-routes-handlers)
 
 # Migrate from Next.js App Router (Basics)
 
@@ -255,7 +258,7 @@ The following sections provide example code snippets for common migration tasks.
 > [!Note]
 > For more details and advanced usage, refer to the linked documentation in each header.
 
-- [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
+- ### [Link](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/learn-the-basics.md#navigation)
 
   ```diff
   - import Link from "next/link"
@@ -267,7 +270,7 @@ The following sections provide example code snippets for common migration tasks.
   }
   ```
 
-- [Server ~Actions~ Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-functions.md)
+- ### [Server ~Actions~ Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-functions.md)
 
   Refer the link above for more details on how to get searchParams, body, validation and more.
 
@@ -284,7 +287,7 @@ The following sections provide example code snippets for common migration tasks.
 
   Also try, [Static Server Functions](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/static-server-functions.md).
 
-- [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
+- ### [Server Routes ~Handlers~](https://github.com/TanStack/router/blob/alpha/docs/start/framework/react/server-routes.md)
 
   ```diff
   - export async function GET() {
