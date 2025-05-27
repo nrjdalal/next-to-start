@@ -7,7 +7,7 @@ title: Migrate from Next.js App Router
 
 This guide will help you migrate your Next.js App Router application to TanStack Start.
 
-### Uninstall Next.js
+## Uninstall Next.js
 
 Uninstall Next.js and remove existing configuration files.
 
@@ -16,7 +16,7 @@ npm uninstall @eslint/eslintrc eslint eslint-config-next next
 rm eslint.config.* next.config.* postcss.config.*
 ```
 
-### Install Dependencies
+## Install Dependencies
 
 TanStack Start is powered by [Vite](https://vite.dev) and [TanStack Router](https://tanstack.com/router) and requires them as dependencies.
 
@@ -35,7 +35,7 @@ Some dev dependencies are also required for TypeScript support, path aliases, an
 npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 ```
 
-### Create/Update Configuration Files
+## Create/Update Configuration Files
 
 We'll then update our `package.json` to use Vite's CLI and set `"type": "module"`:
 
@@ -89,7 +89,7 @@ export default {
 }
 ```
 
-### Create/Update Root Layout
+## Create/Update Root Layout
 
 Create or rename `layout.tsx` to `__root.tsx` and update the content. This file will serve as the root layout for your application, similar to how `layout.tsx` works in Next.js.
 
@@ -153,7 +153,7 @@ function RootLayout() {
 }
 ```
 
-### Create/Update Home Page aka `/`
+## Create/Update Home Page aka `/`
 
 Create or rename `page.tsx` to `index.tsx` and update the content. This file will serve as the home page of your application, similar to how `page.tsx` works in Next.js.
 
