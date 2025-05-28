@@ -351,9 +351,7 @@ Then visit http://localhost:3000. You should see the TanStack Start welcome page
   - }
   ```
 
-  Instead of next/font, use Tailwind CSS’s CSS-first approach. Install fonts:
-
-  Select the required local fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)) and install them as dev dependencies:
+  Instead of next/font, use Tailwind CSS’s CSS-first approach. Install fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)):
 
   ```shell
   npm i -D @fontsource-variable/dm-sans @fontsource-variable/jetbrains-mono
