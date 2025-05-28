@@ -44,59 +44,59 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 3. ## Update Project Configuration
 
-   - `package.json`
+- `package.json`
 
-     ```json
-     // package.json
+  ```json
+  // package.json
 
-     {
-       "type": "module",
-       "scripts": {
-         "dev": "vite dev",
-         "build": "vite build",
-         "start": "node .output/server/index.mjs"
-       }
-     }
-     ```
+  {
+    "type": "module",
+    "scripts": {
+      "dev": "vite dev",
+      "build": "vite build",
+      "start": "node .output/server/index.mjs"
+    }
+  }
+  ```
 
-   - `vite.config.ts`
+- `vite.config.ts`
 
-     ```ts
-     // vite.config.ts
+  ```ts
+  // vite.config.ts
 
-     import { tanstackStart } from "@tanstack/react-start/plugin/vite"
-     import { defineConfig } from "vite"
-     import tsConfigPaths from "vite-tsconfig-paths"
+  import { tanstackStart } from "@tanstack/react-start/plugin/vite"
+  import { defineConfig } from "vite"
+  import tsConfigPaths from "vite-tsconfig-paths"
 
-     export default defineConfig({
-       server: {
-         port: 3000,
-       },
-       plugins: [
-         tsConfigPaths(),
-         tanstackStart({
-           tsr: {
-             // This is the directory where TanStack Router will look for your routes.
-             routesDirectory: "src/app",
-           },
-         }),
-       ],
-     })
-     ```
+  export default defineConfig({
+    server: {
+      port: 3000,
+    },
+    plugins: [
+      tsConfigPaths(),
+      tanstackStart({
+        tsr: {
+          // This is the directory where TanStack Router will look for your routes.
+          routesDirectory: "src/app",
+        },
+      }),
+    ],
+  })
+  ```
 
-     By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
+  By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
 
-   - `postcss.config.ts` for Tailwind CSS:
+- `postcss.config.ts` for Tailwind CSS:
 
-     ```ts
-     // postcss.config.ts
+  ```ts
+  // postcss.config.ts
 
-     export default {
-       plugins: {
-         "@tailwindcss/postcss": {},
-       },
-     }
-     ```
+  export default {
+    plugins: {
+      "@tailwindcss/postcss": {},
+    },
+  }
+  ```
 
 4. ## Adapt the Root Layout
 
@@ -276,7 +276,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Dynamic and Catch-All Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
 
-- ## Link Component
+- ## Links
 
   ```diff
   - import Link from "next/link"
@@ -288,9 +288,9 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-  Learn more about the [Link Component](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
+  Learn more about the [Links](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
 
-- ## [Server ~Actions~ Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions)
+- ## Server ~Actions~ Functions
 
   ```diff
   - 'use server'
@@ -318,7 +318,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Server Routes](https://tanstack.com/start/latest/docs/framework/react/server-routes).
 
-- ## Font
+- ## Fonts
 
   ```diff
   - import { Inter } from "next/font/google"
