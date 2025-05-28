@@ -275,7 +275,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   -   params: Promise<{ slug: string }>
   - }) {
   + export const Route = createFileRoute({
-  +   component: Home,
+  +   component: Page,
   + })
 
   + function Page() {
