@@ -100,8 +100,7 @@ npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
   })
   ```
 
-  > [!Note]
-  > By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
+  By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
 
 - `postcss.config.ts` for Tailwind CSS:
 
