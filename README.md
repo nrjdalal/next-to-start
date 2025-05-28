@@ -21,7 +21,7 @@ title: Migrate from Next.js App Router
 
 # Migrate from Next.js App Router (Basics)
 
-This guide helps you migrate a Next.js App Router project to TanStack Start. You'll learn how to set up TanStack Start and adapt your existing Next.js code.
+This guide helps you migrate a Next.js App Router project to **TanStack Start**. You'll learn how to set up TanStack Start and adapt your existing Next.js code.
 
 To get started, use this Next.js App Router starter template:
 
@@ -43,7 +43,7 @@ rm next.config.* postcss.config.*
 
 ## Install Required Dependencies
 
-TanStack Start leverages Vite and TanStack Router:
+**TanStack Start** leverages Vite and TanStack Router:
 
 ```shell
 npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
@@ -215,7 +215,7 @@ Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
 
 ## Are we migrated yet?
 
-One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within Start.
+One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
 
 ```tsx
 // src/router.tsx
@@ -249,7 +249,7 @@ Run the development server:
 npm run dev
 ```
 
-Then visit http://localhost:3000. You should see the TanStack Start welcome page with its logo and documentation link.
+Then visit http://localhost:3000. You should see the **TanStack Start** welcome page with its logo and documentation link.
 
 > If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
 
@@ -271,7 +271,7 @@ Then visit http://localhost:3000. You should see the TanStack Start welcome page
 
 - ### Dynamic and Catch-All Routes
 
-  Getting dynamic route parameters in TanStack Start is straightforward.
+  Getting dynamic route parameters in **TanStack Start** is straightforward.
 
   ```diff
   - export default async function Page({
