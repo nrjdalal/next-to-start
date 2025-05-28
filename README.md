@@ -26,42 +26,42 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 # Step-by-Step (Basics)
 
-- ## Prerequisites
+## - Prerequisites
 
-  You can clone the following [starter template](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide:
+    You can clone the following [starter template](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide:
 
-  ```shell
-  npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start next.js-start-er
-  ```
+    ```shell
+    npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start next.js-start-er
+    ```
 
-  This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
+    This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
 
-1. ## Remove Next.js
+## 1. Remove Next.js
 
-   First, uninstall Next.js and remove adjacent configuration files:
+    First, uninstall Next.js and remove adjacent configuration files:
 
-   ```shell
-   npm uninstall next
-   rm next.config.* postcss.config.*
-   ```
+    ```shell
+    npm uninstall next
+    rm next.config.* postcss.config.*
+    ```
 
-2. ## Install Required Dependencies
+## 2. Install Required Dependencies
 
-   **TanStack Start** leverages Vite and TanStack Router:
+    **TanStack Start** leverages Vite and TanStack Router:
 
-   ```shell
-   npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
-   ```
+    ```shell
+    npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
+    ```
 
-   For TypeScript support and Tailwind CSS:
+    For TypeScript support and Tailwind CSS:
 
-   ```shell
-   npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
-   ```
+    ```shell
+    npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
+    ```
 
-   > Note: We use `@alpha` tags until the packages reach stability.
+    > Note: We use `@alpha` tags until the packages reach stability.
 
-3. ## Update Project Configuration
+## 3. Update Project Configuration
 
 - `package.json`
 
