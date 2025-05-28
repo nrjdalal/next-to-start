@@ -7,7 +7,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 # Step-by-Step (Basics)
 
-0. ## Prerequisites
+- ## Prerequisites
 
 You can clone the [Next.js App Router Starter](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide.
 
