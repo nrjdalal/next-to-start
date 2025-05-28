@@ -9,234 +9,233 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 - ## Prerequisites
 
-You can clone the [Next.js App Router Starter](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide.
+  You can clone the [Next.js App Router Starter](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide.
 
-```shell
-npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start next.js-start-er
-```
+  ```shell
+  npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start next.js-start-er
+  ```
 
-This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
+  This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
 
 1. ## Remove Next.js
 
-First, uninstall Next.js and remove adjacent configuration files:
+   First, uninstall Next.js and remove adjacent configuration files:
 
-```shell
-npm uninstall next
-rm next.config.* postcss.config.*
-```
+   ```shell
+   npm uninstall next
+   rm next.config.* postcss.config.*
+   ```
 
 2. ## Install Required Dependencies
 
-**TanStack Start** leverages Vite and TanStack Router:
+   **TanStack Start** leverages Vite and TanStack Router:
 
-```shell
-npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
-```
+   ```shell
+   npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
+   ```
 
-For TypeScript support and Tailwind CSS:
+   For TypeScript support and Tailwind CSS:
 
-```shell
-npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
-```
+   ```shell
+   npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
+   ```
 
-> [!Note]
-> We use `@alpha` tags until the packages reach stability.
+   > Note: We use `@alpha` tags until the packages reach stability.
 
 3. ## Update Project Configuration
 
-- `package.json`
+   - `package.json`
 
-  ```json
-  // package.json
+     ```json
+     // package.json
 
-  {
-    "type": "module",
-    "scripts": {
-      "dev": "vite dev",
-      "build": "vite build",
-      "start": "node .output/server/index.mjs"
-    }
-  }
-  ```
+     {
+       "type": "module",
+       "scripts": {
+         "dev": "vite dev",
+         "build": "vite build",
+         "start": "node .output/server/index.mjs"
+       }
+     }
+     ```
 
-- `vite.config.ts`
+   - `vite.config.ts`
 
-  ```ts
-  // vite.config.ts
+     ```ts
+     // vite.config.ts
 
-  import { tanstackStart } from "@tanstack/react-start/plugin/vite"
-  import { defineConfig } from "vite"
-  import tsConfigPaths from "vite-tsconfig-paths"
+     import { tanstackStart } from "@tanstack/react-start/plugin/vite"
+     import { defineConfig } from "vite"
+     import tsConfigPaths from "vite-tsconfig-paths"
 
-  export default defineConfig({
-    server: {
-      port: 3000,
-    },
-    plugins: [
-      tsConfigPaths(),
-      tanstackStart({
-        tsr: {
-          // This is the directory where TanStack Router will look for your routes.
-          routesDirectory: "src/app",
-        },
-      }),
-    ],
-  })
-  ```
+     export default defineConfig({
+       server: {
+         port: 3000,
+       },
+       plugins: [
+         tsConfigPaths(),
+         tanstackStart({
+           tsr: {
+             // This is the directory where TanStack Router will look for your routes.
+             routesDirectory: "src/app",
+           },
+         }),
+       ],
+     })
+     ```
 
-  By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
+     By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
 
-- `postcss.config.ts` for Tailwind CSS:
+   - `postcss.config.ts` for Tailwind CSS:
 
-  ```ts
-  // postcss.config.ts
+     ```ts
+     // postcss.config.ts
 
-  export default {
-    plugins: {
-      "@tailwindcss/postcss": {},
-    },
-  }
-  ```
+     export default {
+       plugins: {
+         "@tailwindcss/postcss": {},
+       },
+     }
+     ```
 
 4. ## Adapt the Root Layout
 
-> **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
+   > **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
-Instead of `layout.tsx`, you will create a file named `__root.tsx` in the `src/app` directory. This file will serve as the root layout for your application.
+   Instead of `layout.tsx`, you will create a file named `__root.tsx` in the `src/app` directory. This file will serve as the root layout for your application.
 
-```diff
-// src/app/layout.tsx -> src/app/__root.tsx
+   ```diff
+   // src/app/layout.tsx -> src/app/__root.tsx
 
-- import type { Metadata } from "next"
-import {
-  Outlet,
-  createRootRoute,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router"
-import "./globals.css"
+   - import type { Metadata } from "next"
+   import {
+     Outlet,
+     createRootRoute,
+     HeadContent,
+     Scripts,
+   } from "@tanstack/react-router"
+   import "./globals.css"
 
-- export const metadata: Metadata = {
--   title: "Create Next App",
--   description: "Generated by create next app",
-- }
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-      },
-      { title: "TanStack Start Starter" }
-    ],
-  }),
-  component: RootLayout,
-})
+   - export const metadata: Metadata = {
+   -   title: "Create Next App",
+   -   description: "Generated by create next app",
+   - }
+   export const Route = createRootRoute({
+     head: () => ({
+       meta: [
+         { charSet: "utf-8" },
+         {
+           name: "viewport",
+           content: "width=device-width, initial-scale=1",
+         },
+         { title: "TanStack Start Starter" }
+       ],
+     }),
+     component: RootLayout,
+   })
 
-- export default function RootLayout({
--   children,
-- }: Readonly<{
--   children: React.ReactNode
-- }>) {
--   return (
--     <html lang="en">
--       <body>{children}</body>
--     </html>
--   )
-- }
-function RootLayout() {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <Outlet />
-        <Scripts />
-      </body>
-    </html>
-  )
-}
-```
+   - export default function RootLayout({
+   -   children,
+   - }: Readonly<{
+   -   children: React.ReactNode
+   - }>) {
+   -   return (
+   -     <html lang="en">
+   -       <body>{children}</body>
+   -     </html>
+   -   )
+   - }
+   function RootLayout() {
+     return (
+       <html lang="en">
+         <head>
+           <HeadContent />
+         </head>
+         <body>
+           <Outlet />
+           <Scripts />
+         </body>
+       </html>
+     )
+   }
+   ```
 
 5. ## Adapt the Home Page
 
-> **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
+   > **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
-Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
+   Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
 
-```diff
-// src/app/page.tsx -> src/app/index.tsx
+   ```diff
+   // src/app/page.tsx -> src/app/index.tsx
 
-- export default function Home() {
-+ export const Route = createFileRoute({
-+   component: Home,
-+ })
+   - export default function Home() {
+   + export const Route = createFileRoute({
+   +   component: Home,
+   + })
 
-+ function Home() {
-  return (
-    <main className="min-h-dvh w-screen flex items-center justify-center flex-col gap-y-4 p-4">
-      <img
-        className="max-w-sm w-full"
-        src="https://tanstack.com/assets/splash-dark-8nwlc0Nt.png"
-        alt="TanStack Logo"
-      />
-      <h1>
-        <span className="line-through">Next.js</span> TanStack Start
-      </h1>
-      <a
-        className="bg-foreground text-background rounded-full px-4 py-1 hover:opacity-90"
-        href="https://tanstack.com/start/latest"
-        target="_blank"
-      >
-        Docs
-      </a>
-    </main>
-  )
-}
-```
+   + function Home() {
+     return (
+       <main className="min-h-dvh w-screen flex items-center justify-center flex-col gap-y-4 p-4">
+         <img
+           className="max-w-sm w-full"
+           src="https://tanstack.com/assets/splash-dark-8nwlc0Nt.png"
+           alt="TanStack Logo"
+         />
+         <h1>
+           <span className="line-through">Next.js</span> TanStack Start
+         </h1>
+         <a
+           className="bg-foreground text-background rounded-full px-4 py-1 hover:opacity-90"
+           href="https://tanstack.com/start/latest"
+           target="_blank"
+         >
+           Docs
+         </a>
+       </main>
+     )
+   }
+   ```
 
 6. ## Are we migrated yet?
 
-One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
+   One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
 
-```tsx
-// src/router.tsx
+   ```tsx
+   // src/router.tsx
 
-import { createRouter as createTanStackRouter } from "@tanstack/react-router"
-import { routeTree } from "./routeTree.gen"
+   import { createRouter as createTanStackRouter } from "@tanstack/react-router"
+   import { routeTree } from "./routeTree.gen"
 
-export function createRouter() {
-  const router = createTanStackRouter({
-    routeTree,
-    scrollRestoration: true,
-  })
+   export function createRouter() {
+     const router = createTanStackRouter({
+       routeTree,
+       scrollRestoration: true,
+     })
 
-  return router
-}
+     return router
+   }
 
-declare module "@tanstack/react-router" {
-  interface Register {
-    router: ReturnType<typeof createRouter>
-  }
-}
-```
+   declare module "@tanstack/react-router" {
+     interface Register {
+       router: ReturnType<typeof createRouter>
+     }
+   }
+   ```
 
-> Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
+   > Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
 
 7. ## Verify the Migration
 
-Run the development server:
+   Run the development server:
 
-```shell
-npm run dev
-```
+   ```shell
+   npm run dev
+   ```
 
-Then visit http://localhost:3000. You should see the **TanStack Start** welcome page with its logo and documentation link.
+   Then visit http://localhost:3000. You should see the **TanStack Start** welcome page with its logo and documentation link.
 
-> If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
+   > If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
 
 ---
 
