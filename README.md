@@ -237,8 +237,6 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
    > If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
 
----
-
 # Next Steps (Advanced)
 
 - ## Routing Concepts
