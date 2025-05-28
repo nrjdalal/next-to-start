@@ -7,7 +7,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 # Step-by-Step (Basics)
 
-0. ### Prerequisites
+0. ## Prerequisites
 
 You can clone the [Next.js App Router Starter](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide.
 
@@ -17,7 +17,7 @@ npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start next
 
 This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
 
-1. ### Remove Next.js
+1. ## Remove Next.js
 
 First, uninstall Next.js and remove adjacent configuration files:
 
@@ -26,7 +26,7 @@ npm uninstall next
 rm next.config.* postcss.config.*
 ```
 
-2. ### Install Required Dependencies
+2. ## Install Required Dependencies
 
 **TanStack Start** leverages Vite and TanStack Router:
 
@@ -43,7 +43,7 @@ npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 > [!Note]
 > We use `@alpha` tags until the packages reach stability.
 
-3. ### Update Project Configuration
+3. ## Update Project Configuration
 
 - `package.json`
 
@@ -99,7 +99,7 @@ npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
   }
   ```
 
-4. ### Adapt the Root Layout
+4. ## Adapt the Root Layout
 
 > **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
@@ -161,7 +161,7 @@ function RootLayout() {
 }
 ```
 
-5. ### Adapt the Home Page
+5. ## Adapt the Home Page
 
 > **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
@@ -198,7 +198,7 @@ Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
 }
 ```
 
-6. ### Are we migrated yet?
+6. ## Are we migrated yet?
 
 One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
 
@@ -226,7 +226,7 @@ declare module "@tanstack/react-router" {
 
 > Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
 
-7. ### Verify the Migration
+7. ## Verify the Migration
 
 Run the development server:
 
@@ -242,7 +242,7 @@ Then visit http://localhost:3000. You should see the **TanStack Start** welcome 
 
 # Next Steps (Advanced)
 
-- ### Routing Concepts
+- ## Routing Concepts
 
   | Path                         | Next.js                         | TanStack Start            |
   | ---------------------------- | ------------------------------- | ------------------------- |
@@ -254,7 +254,7 @@ Then visit http://localhost:3000. You should see the **TanStack Start** welcome 
 
   Learn more about the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
-- ### Dynamic and Catch-All Routes
+- ## Dynamic and Catch-All Routes
 
   Getting dynamic route parameters in **TanStack Start** is straightforward.
 
@@ -279,7 +279,7 @@ Then visit http://localhost:3000. You should see the **TanStack Start** welcome 
 
   Learn more about the [Dynamic and Catch-All Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
 
-- ### Link Component
+- ## Link Component
 
   ```diff
   - import Link from "next/link"
@@ -293,7 +293,7 @@ Then visit http://localhost:3000. You should see the **TanStack Start** welcome 
 
   Learn more about the [Link Component](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
 
-- ### [Server ~Actions~ Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions)
+- ## [Server ~Actions~ Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions)
 
   ```diff
   - 'use server'
@@ -308,7 +308,7 @@ Then visit http://localhost:3000. You should see the **TanStack Start** welcome 
 
   Learn more about the [Server Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions).
 
-- ### Server Routes ~Handlers~
+- ## Server Routes ~Handlers~
 
   ```diff
   - export async function GET() {
@@ -321,7 +321,7 @@ Then visit http://localhost:3000. You should see the **TanStack Start** welcome 
 
   Learn more about the [Server Routes](https://tanstack.com/start/latest/docs/framework/react/server-routes).
 
-- ### Font
+- ## Font
 
   ```diff
   - import { Inter } from "next/font/google"
