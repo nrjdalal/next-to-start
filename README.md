@@ -7,22 +7,26 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 ## Table of Contents
 
-- [Step-by-Step (Basics)](#step-by-step-basics)
-  - [Prerequisites](#prerequisites)
-  1. [Remove Next.js](#remove-nextjs)
-  2. [Install Required Dependencies](#install-required-dependencies)
-  3. [Update Project Configuration](#update-project-configuration)
-  4. [Adapt the Root Layout](#adapt-the-root-layout)
-  5. [Adapt the Home Page](#adapt-the-home-page)
-  6. [Are we migrated yet?](#are-we-migrated-yet)
-  7. [Verify the Migration](#verify-the-migration)
-- [Next Steps (Advanced)](#next-steps-advanced)
-  - [Routing Concepts](#routing-concepts)
-  - [Dynamic and Catch-All Routes](#dynamic-and-catch-all-routes)
-  - [Links](#links)
-  - [Server ~Actions~ Functions](#server-actions-functions)
-  - [Server Routes ~Handlers~](#server-routes-handlers)
-  - [Fonts](#fonts)
+### [Step-by-Step (Basics)](#step-by-step-basics)
+
+    - [Prerequisites](#prerequisites)
+
+    1. [Remove Next.js](#remove-nextjs)
+    2. [Install Required Dependencies](#install-required-dependencies)
+    3. [Update Project Configuration](#update-project-configuration)
+    4. [Adapt the Root Layout](#adapt-the-root-layout)
+    5. [Adapt the Home Page](#adapt-the-home-page)
+    6. [Are we migrated yet?](#are-we-migrated-yet)
+    7. [Verify the Migration](#verify-the-migration)
+
+### [Next Steps (Advanced)](#next-steps-advanced)
+
+    - [Routing Concepts](#routing-concepts)
+    - [Dynamic and Catch-All Routes](#dynamic-and-catch-all-routes)
+    - [Links](#links)
+    - [Server ~Actions~ Functions](#server-actions-functions)
+    - [Server Routes ~Handlers~](#server-routes-handlers)
+    - [Fonts](#fonts)
 
 # Step-by-Step (Basics)
 
