@@ -19,20 +19,21 @@ title: Migrate from Next.js App Router
   - [Server Routes ~Handlers~](#server-routes-handlers)
   - [Font](#font)
 
-# Migrate from Next.js App Router (Basics)
+This guide provides a step-by-step process to migrate a project from the Next.js App Router to TanStack Start. We respect the powerful features of Next.js and aim to make this transition as smooth and professional as possible.
 
-This guide helps you migrate a Next.js App Router project to **TanStack Start**. You'll learn how to set up TanStack Start and adapt your existing Next.js code.
+# Step-by-Step (Basics)
 
-To get started, use this Next.js App Router starter template:
+0. ### Prerequisites
+
+You can clone the [Next.js App Router Starter](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide.
 
 ```shell
 npx gitpick nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start next.js-start-er
 ```
 
-> [!Important]
-> For advanced features like dynamic routes, links, server actions, route handlers and more, refer to the [Next Steps (Advanced)](#next-steps-advanced) section at the end of this guide.
+This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
 
-## Remove Next.js
+1. ### Remove Next.js
 
 First, uninstall Next.js and remove adjacent configuration files:
 
@@ -41,7 +42,7 @@ npm uninstall next
 rm next.config.* postcss.config.*
 ```
 
-## Install Required Dependencies
+2. ### Install Required Dependencies
 
 **TanStack Start** leverages Vite and TanStack Router:
 
@@ -58,7 +59,7 @@ npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
 > [!Note]
 > We use `@alpha` tags until the packages reach stability.
 
-## Update Project Configuration
+3. ### Update Project Configuration
 
 - `package.json`
 
@@ -114,7 +115,7 @@ npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
   }
   ```
 
-## Adapt the Root Layout
+4. ### Adapt the Root Layout
 
 > **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
@@ -176,7 +177,7 @@ function RootLayout() {
 }
 ```
 
-## Adapt the Home Page
+5. ### Adapt the Home Page
 
 > **TanStack Start** uses routing adjacent to Next.js, but with a [different structure](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
@@ -213,7 +214,7 @@ Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
 }
 ```
 
-## Are we migrated yet?
+6. ### Are we migrated yet?
 
 One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
 
@@ -241,7 +242,7 @@ declare module "@tanstack/react-router" {
 
 > Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
 
-## Verify the Migration
+7. ### Verify the Migration
 
 Run the development server:
 
