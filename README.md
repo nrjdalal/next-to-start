@@ -98,7 +98,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
    Instead of `layout.tsx`, you will create a file named `__root.tsx` in the `src/app` directory. This file will serve as the root layout for your application.
 
-- `src/app/layout.tsx` -> `src/app/__root.tsx`
+- `src/app/layout.tsx` to `src/app/__root.tsx`
 
   ```diff
   - import type { Metadata } from "next"
