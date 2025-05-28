@@ -160,7 +160,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
    Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
 
-- `src/app/page.tsx` -> `src/app/index.tsx`
+- `src/app/page.tsx` to `src/app/index.tsx`
 
   ```diff
   - export default function Home() {
