@@ -3,23 +3,7 @@ id: migrate-from-next-js-app-router
 title: Migrate from Next.js App Router
 ---
 
-- [Migrate from Next.js App Router (Basics)](#migrate-from-nextjs-app-router-basics)
-  - [Uninstall Next.js](#uninstall-nextjs)
-  - [Install Dependencies](#install-dependencies)
-  - [Update Configuration Files](#update-configuration-files)
-  - [Update Root Layout](#update-root-layout)
-  - [Update Home Page](#update-home-page)
-  - [Are we migrated yet?](#are-we-migrated-yet)
-  - [Test Your Migration](#test-your-migration)
-- [Next Steps (Advanced)](#next-steps-advanced)
-  - [Routing Concepts](#routing-concepts)
-  - [Dynamic Routes](#dynamic-routes)
-  - [Link](#link)
-  - [Server ~Actions~ Functions](#server-actions-functions)
-  - [Server Routes ~Handlers~](#server-routes-handlers)
-  - [Font](#font)
-
-This guide provides a step-by-step process to migrate a project from the Next.js App Router to TanStack Start. We respect the powerful features of Next.js and aim to make this transition as smooth and professional as possible.
+This guide provides a step-by-step process to migrate a project from the Next.js App Router to **TanStack Start**. We respect the powerful features of Next.js and aim to make this transition as smooth and professional as possible.
 
 # Step-by-Step (Basics)
 
