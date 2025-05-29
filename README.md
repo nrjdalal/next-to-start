@@ -7,28 +7,9 @@ title: Migrate from Next.js
 
 This guide provides a step-by-step process to migrate a project from the Next.js App Router to **TanStack Start**. We respect the powerful features of Next.js and aim to make this transition as smooth and professional as possible.
 
-## Table of Contents
+## Step-by-Step (Basics)
 
-- [Step-by-Step (Basics)](#step-by-step-basics)
-  - [0. Prerequisites](#0-prerequisites)
-  - [1. Remove Next.js](#1-remove-nextjs)
-  - [2. Install Required Dependencies](#2-install-required-dependencies)
-  - [3. Update Project Configuration](#3-update-project-configuration)
-  - [4. Adapt the Root Layout](#4-adapt-the-root-layout)
-  - [5. Adapt the Home Page](#5-adapt-the-home-page)
-  - [6. Are we migrated yet?](#6-are-we-migrated-yet)
-  - [7. Verify the Migration](#7-verify-the-migration)
-- [Next Steps (Advanced)](#next-steps-advanced)
-  - [Routing Concepts](#routing-concepts)
-  - [Dynamic and Catch-All Routes](#dynamic-and-catch-all-routes)
-  - [Links](#links)
-  - [Server ~Actions~ Functions](#server-actions-functions)
-  - [Server Routes ~Handlers~](#server-routes-handlers)
-  - [Fonts](#fonts)
-
-# Step-by-Step (Basics)
-
-- ## 0. Prerequisites
+- ### 0. Prerequisites
 
   You can clone the following [starter template](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide:
 
@@ -38,7 +19,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
 
-- ## 1. Remove Next.js
+- ### 1. Remove Next.js
 
   First, uninstall Next.js and remove adjacent configuration files:
 
@@ -47,7 +28,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   rm next.config.* postcss.config.*
   ```
 
-- ## 2. Install Required Dependencies
+- ### 2. Install Required Dependencies
 
   **TanStack Start** leverages Vite and TanStack Router:
 
@@ -63,9 +44,9 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   > Note: We use `@alpha` tags until the packages reach stability.
 
-- ## 3. Update Project Configuration
+- ### 3. Update Project Configuration
 
-  - `package.json`
+- `package.json`
 
   ```json
   {
@@ -78,7 +59,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-  - `vite.config.ts`
+- `vite.config.ts`
 
   ```ts
   import { tanstackStart } from "@tanstack/react-start/plugin/vite"
@@ -103,7 +84,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
 
-  - `postcss.config.ts`
+- `postcss.config.ts`
 
   ```ts
   export default {
@@ -113,7 +94,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-- ## 4. Adapt the Root Layout
+- ### 4. Adapt the Root Layout
 
   > **TanStack Start** uses a routing adjacent to Remix, but with some changes to make compatible with nested structures and support special features using tokens. You can see all on changes in the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts) guide.
 
@@ -175,7 +156,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-- ## 5. Adapt the Home Page
+- ### 5. Adapt the Home Page
 
   > TODO: Should we callout that it is this way since you are referencing the index route and not the layout route. Hence why the index token is being used.
 
@@ -212,7 +193,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-- ## 6. Are we migrated yet?
+- ### 6. Are we migrated yet?
 
   One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
 
@@ -240,7 +221,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   > Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
 
-- ## 7. Verify the Migration
+- ### 7. Verify the Migration
 
   Run the development server:
 
@@ -252,9 +233,9 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   > If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
 
-# Next Steps (Advanced)
+## Next Steps (Advanced)
 
-- ## Routing Concepts
+- ### Routing Concepts
 
   | Route Example               | Next.js                         | TanStack Start            |
   | --------------------------- | ------------------------------- | ------------------------- |
@@ -266,7 +247,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
-- ## Dynamic and Catch-All Routes
+- ### Dynamic and Catch-All Routes
 
   Getting dynamic route parameters in **TanStack Start** is straightforward.
 
@@ -291,7 +272,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Dynamic and Catch-All Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
 
-- ## Links
+- ### Links
 
   ```diff
   - import Link from "next/link"
@@ -305,7 +286,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Links](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
 
-- ## Server ~Actions~ Functions
+- ### Server ~Actions~ Functions
 
   ```diff
   - 'use server'
@@ -320,7 +301,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Server Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions).
 
-- ## Server Routes ~Handlers~
+- ### Server Routes ~Handlers~
 
   ```diff
   - export async function GET() {
@@ -333,22 +314,22 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   Learn more about the [Server Routes](https://tanstack.com/start/latest/docs/framework/react/server-routes).
 
-- ## Fonts
+- ### Fonts
 
-  ```diff
-  - import { Inter } from "next/font/google"
+  ```tsx
+  - import { Inter } from "next/font/google" // [!code --]
 
-  - const inter = Inter({
-  -   subsets: ["latin"],
-  -   display: "swap",
-  - })
+  - const inter = Inter({ // [!code --]
+  -   subsets: ["latin"], // [!code --]
+  -   display: "swap", // [!code --]
+  - }) // [!code --]
 
-  - export default function Page() {
-  -   return <p className={inter.className}>Font Sans</p>
-  - }
+  - export default function Page() { // [!code --]
+  -   return <p className={inter.className}>Font Sans</p> // [!code --]
+  - } // [!code --]
   ```
 
-  Instead of next/font, use Tailwind CSS’s CSS-first approach. Install fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)):
+  Instead of `next/font`, use Tailwind CSS’s CSS-first approach. Install fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)):
 
   ```shell
   npm i -D @fontsource-variable/dm-sans @fontsource-variable/jetbrains-mono
