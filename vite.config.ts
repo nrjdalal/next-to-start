@@ -9,11 +9,12 @@ export default defineConfig({
   },
   plugins: [
     tailwindcss(),
+    // Enables Vite to resolve imports using path aliases.
     tsConfigPaths(),
     tanstackStart({
       tsr: {
-        // This is the directory where TanStack Router will look for your routes.
-        routesDirectory: "src/app",
+        // Specifies the directory TanStack Router uses for your routes.
+        routesDirectory: "src/app", // Default is "src/routes"
       },
     }),
   ],
