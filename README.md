@@ -40,8 +40,8 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   First, uninstall Next.js and remove adjacent configuration files:
 
   ```shell
-  npm uninstall @tailwindcss/postcss next
-  rm postcss.config.* next.config.*
+  npm uninstall @eslint/eslintrc @tailwindcss/postcss eslint eslint-config-next next
+  rm eslint.config.* postcss.config.* next.config.*
   ```
 
 - ### 2. Install Required Dependencies
@@ -52,10 +52,10 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
   ```
 
-  For TypeScript support and Tailwind CSS:
+  For Tailwind CSS, ~eslint~ oxlint and TypeScript support:
 
   ```shell
-  npm i -D @tailwindcss/vite tailwindcss vite-tsconfig-paths
+  npm i -D @tailwindcss/vite oxlint tailwindcss vite-tsconfig-paths
   ```
 
   > Note: We use `@alpha` tags until the packages reach stability.
@@ -70,7 +70,8 @@ This guide provides a step-by-step process to migrate a project from the Next.js
     "scripts": {
       "dev": "vite dev",
       "build": "vite build",
-      "start": "node .output/server/index.mjs"
+      "start": "node .output/server/index.mjs",
+      "lint": "oxlint"
     }
   }
   ```
