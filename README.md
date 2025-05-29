@@ -377,8 +377,8 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   - export default async function Page() {
   + function Page() {
-  -   const data = await fetch('https://api.vercel.app/blog')
-  -   const posts = await data.json()
+  -   const res = await fetch('https://api.vercel.app/blog')
+  -   const posts = await res.json()
   +   const posts = Route.useLoaderData()
 
   +   return (
