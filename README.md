@@ -245,148 +245,148 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 ## Next Steps (Advanced)
 
-- ### Routing Concepts
+### Routing Concepts
 
-  | Route Example               | Next.js                         | TanStack Start            |
-  | --------------------------- | ------------------------------- | ------------------------- |
-  | Root Layout                 | `src/app/layout.tsx`            | `src/app/__root.tsx`      |
-  | `/` (Home Page)             | `src/app/page.tsx`              | `src/app/index.tsx`       |
-  | `/posts` (Static Route)     | `src/app/posts/page.tsx`        | `src/app/posts.tsx`       |
-  | `/posts/:slug` (Dynamic)    | `src/app/posts/[slug]/page.tsx` | `src/app/posts/$slug.tsx` |
-  | `/api/endpoint` (API Route) | `src/app/api/endpoint/route.ts` | `src/app/api/endpoint.ts` |
+| Route Example               | Next.js                         | TanStack Start            |
+| --------------------------- | ------------------------------- | ------------------------- |
+| Root Layout                 | `src/app/layout.tsx`            | `src/app/__root.tsx`      |
+| `/` (Home Page)             | `src/app/page.tsx`              | `src/app/index.tsx`       |
+| `/posts` (Static Route)     | `src/app/posts/page.tsx`        | `src/app/posts.tsx`       |
+| `/posts/:slug` (Dynamic)    | `src/app/posts/[slug]/page.tsx` | `src/app/posts/$slug.tsx` |
+| `/api/endpoint` (API Route) | `src/app/api/endpoint/route.ts` | `src/app/api/endpoint.ts` |
 
-  Learn more about the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
+Learn more about the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
 
-- ### Dynamic and Catch-All Routes
+### Dynamic and Catch-All Routes
 
-  Getting dynamic route parameters in **TanStack Start** is straightforward.
+Getting dynamic route parameters in **TanStack Start** is straightforward.
 
-  ```diff
-  - export default async function Page({
-  -   params,
-  - }: {
-  -   params: Promise<{ slug: string }>
-  - }) {
-  + export const Route = createFileRoute({
-  +   component: Page,
-  + })
+```diff
+- export default async function Page({
+-   params,
+- }: {
+-   params: Promise<{ slug: string }>
+- }) {
++ export const Route = createFileRoute({
++   component: Page,
++ })
 
-  + function Page() {
-  -   const { slug } = await params
-  +   const { slug } = Route.useParams()
-    return <div>My Post: {slug}</div>
++ function Page() {
+-   const { slug } = await params
++   const { slug } = Route.useParams()
+  return <div>My Post: {slug}</div>
+}
+```
+
+Similarly, you can get `searchParams` like `const { page, filter, sort } = Route.useSearch()`.
+
+Learn more about the [Dynamic and Catch-All Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
+
+### Links
+
+```diff
+- import Link from "next/link"
++ import { Link } from "@tanstack/react-router"
+
+function Component() {
+-   return <Link href="/dashboard">Dashboard</Link>
++   return <Link to="/dashboard">Dashboard</Link>
+}
+```
+
+Learn more about the [Links](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
+
+### Server ~Actions~ Functions
+
+```diff
+- 'use server'
++ import { createServerFn } from '@tanstack/react-start'
+
+- export const create = async () => {
++ export const create = createServerFn().handler(async () => {
+  return true
+- }
++ })
+```
+
+Learn more about the [Server Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions).
+
+### Server Routes ~Handlers~
+
+```diff
+- export async function GET() {
++ export const ServerRoute = createServerFileRoute().methods({
++   GET: async () => {
+    return Response.json("Hello, World!")
   }
-  ```
++ })
+```
 
-  Similarly, you can get `searchParams` like `const { page, filter, sort } = Route.useSearch()`.
+Learn more about the [Server Routes](https://tanstack.com/start/latest/docs/framework/react/server-routes).
 
-  Learn more about the [Dynamic and Catch-All Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
+### Fonts
 
-- ### Links
+```diff
+- import { Inter } from "next/font/google"
 
-  ```diff
-  - import Link from "next/link"
-  + import { Link } from "@tanstack/react-router"
+- const inter = Inter({
+-   subsets: ["latin"],
+-   display: "swap",
+- })
 
-  function Component() {
-  -   return <Link href="/dashboard">Dashboard</Link>
-  +   return <Link to="/dashboard">Dashboard</Link>
-  }
-  ```
+- export default function Page() {
+-   return <p className={inter.className}>Font Sans</p>
+- }
+```
 
-  Learn more about the [Links](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
+Instead of `next/font`, use Tailwind CSS’s CSS-first approach. Install fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)):
 
-- ### Server ~Actions~ Functions
+```shell
+npm i -D @fontsource-variable/dm-sans @fontsource-variable/jetbrains-mono
+```
 
-  ```diff
-  - 'use server'
-  + import { createServerFn } from '@tanstack/react-start'
+Add to `src/app/globals.css`:
 
-  - export const create = async () => {
-  + export const create = createServerFn().handler(async () => {
-    return true
-  - }
-  + })
-  ```
+```css
+/* src/app/globals.css */
 
-  Learn more about the [Server Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions).
+@import "tailwindcss";
 
-- ### Server Routes ~Handlers~
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/jetbrains-mono";
 
-  ```diff
-  - export async function GET() {
-  + export const ServerRoute = createServerFileRoute().methods({
-  +   GET: async () => {
-      return Response.json("Hello, World!")
-    }
-  + })
-  ```
-
-  Learn more about the [Server Routes](https://tanstack.com/start/latest/docs/framework/react/server-routes).
-
-- ### Fonts
-
-  ```diff
-  - import { Inter } from "next/font/google"
-
-  - const inter = Inter({
-  -   subsets: ["latin"],
-  -   display: "swap",
-  - })
-
-  - export default function Page() {
-  -   return <p className={inter.className}>Font Sans</p>
-  - }
-  ```
-
-  Instead of `next/font`, use Tailwind CSS’s CSS-first approach. Install fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)):
-
-  ```shell
-  npm i -D @fontsource-variable/dm-sans @fontsource-variable/jetbrains-mono
-  ```
-
-  Add to `src/app/globals.css`:
-
-  ```css
-  /* src/app/globals.css */
-
-  @import "tailwindcss";
-
-  @import "@fontsource-variable/dm-sans";
-  @import "@fontsource-variable/jetbrains-mono";
-
-  @theme inline {
-    --font-sans: "DM Sans Variable", sans-serif;
-    --font-mono: "JetBrains Mono Variable", monospace;
-    /* ... */
-  }
-
+@theme inline {
+  --font-sans: "DM Sans Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
   /* ... */
-  ```
+}
 
-- ### Fetching Data
+/* ... */
+```
 
-  ```diff
-  - export default async function Page() {
-  + export const Route = createFileRoute({
-  +   component: Page,
-  +   loader: async () => {
-  +     const res = await fetch('https://api.vercel.app/blog')
-  +     return res.json()
-  +   },
-  + })
+### Fetching Data
 
-  + function Page() {
-  -   const data = await fetch('https://api.vercel.app/blog')
-  -   const posts = await data.json()
-  +   const posts = Route.useLoaderData()
+```diff
+- export default async function Page() {
++ export const Route = createFileRoute({
++   component: Page,
++   loader: async () => {
++     const res = await fetch('https://api.vercel.app/blog')
++     return res.json()
++   },
++ })
 
-    return (
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-    )
-  }
-  ```
++ function Page() {
+-   const data = await fetch('https://api.vercel.app/blog')
+-   const posts = await data.json()
++   const posts = Route.useLoaderData()
+
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
