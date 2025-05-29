@@ -17,7 +17,6 @@ function Home() {
         className="bg-foreground text-background rounded-full px-4 py-1 hover:opacity-90"
         href="https://tanstack.com/start/latest"
         target="_blank"
-        rel="noreferrer"
       >
         Docs
       </a>
