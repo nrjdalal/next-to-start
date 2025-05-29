@@ -316,17 +316,17 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 - ### Fonts
 
-  ```tsx
-  - import { Inter } from "next/font/google" // [!code --]
+  ```diff
+  - import { Inter } from "next/font/google"
 
-  - const inter = Inter({ // [!code --]
-  -   subsets: ["latin"], // [!code --]
-  -   display: "swap", // [!code --]
-  - }) // [!code --]
+  - const inter = Inter({
+  -   subsets: ["latin"],
+  -   display: "swap",
+  - })
 
-  - export default function Page() { // [!code --]
-  -   return <p className={inter.className}>Font Sans</p> // [!code --]
-  - } // [!code --]
+  - export default function Page() {
+  -   return <p className={inter.className}>Font Sans</p>
+  - }
   ```
 
   Instead of `next/font`, use Tailwind CSS’s CSS-first approach. Install fonts (e.g. from [Fontsource](https://github.com/fontsource/fontsource)):
