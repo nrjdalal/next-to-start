@@ -106,7 +106,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 - ### 4. Adapt the Root Layout
 
-  > **TanStack Start** uses a routing adjacent to Remix, but with some changes to make compatible with nested structures and support special features using tokens. You can see all on changes in the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts) guide.
+  > **TanStack Start** uses a routing adjacent to Remix, but with some changes to make compatible with nested structures and support special features using tokens. You can see all on changes in the [Routing Concepts](/router/latest/docs/framework/react/routing/routing-concepts) guide.
 
   Instead of `layout.tsx`, you will create a file named `__root.tsx` in the `src/app` directory. This file will serve as the root layout for your application.
 
@@ -185,7 +185,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
       <main className="min-h-dvh w-screen flex items-center justify-center flex-col gap-y-4 p-4">
         <img
           className="max-w-sm w-full"
-          src="https://tanstack.com/assets/splash-dark-8nwlc0Nt.png"
+          src="/assets/splash-dark-8nwlc0Nt.png"
           alt="TanStack Logo"
         />
         <h1>
@@ -193,7 +193,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
         </h1>
         <a
           className="bg-foreground text-background rounded-full px-4 py-1 hover:opacity-90"
-          href="https://tanstack.com/start/latest"
+          href="/start/latest"
           target="_blank"
         >
           Docs
@@ -229,7 +229,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-  > Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
+  > Here you can configure everything from the default [preloading functionality](/router/latest/docs/framework/react/guide/preloading) to [caching staleness](/router/latest/docs/framework/react/guide/data-loading).
 
 - ### 7. Verify the Migration
 
@@ -257,7 +257,7 @@ Now that you have migrated the basic structure of your Next.js application to **
 | `/posts/:slug` (Dynamic)    | `src/app/posts/[slug]/page.tsx` | `src/app/posts/$slug.tsx` |
 | `/api/endpoint` (API Route) | `src/app/api/endpoint/route.ts` | `src/app/api/endpoint.ts` |
 
-Learn more about the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts).
+Learn more about the [Routing Concepts](/router/latest/docs/framework/react/routing/routing-concepts).
 
 ### Dynamic and Catch-All Routes
 
@@ -282,7 +282,7 @@ Getting dynamic route parameters in **TanStack Start** is straightforward.
 
 Similarly, you can get `searchParams` like `const { page, filter, sort } = Route.useSearch()`.
 
-Learn more about the [Dynamic and Catch-All Routes](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
+Learn more about the [Dynamic and Catch-All Routes](/router/latest/docs/framework/react/routing/routing-concepts#dynamic-route-segments).
 
 ### Links
 
@@ -296,7 +296,7 @@ function Component() {
 }
 ```
 
-Learn more about the [Links](https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation).
+Learn more about the [Links](/start/latest/docs/framework/react/learn-the-basics#navigation).
 
 ### Server ~Actions~ Functions
 
@@ -311,7 +311,7 @@ Learn more about the [Links](https://tanstack.com/start/latest/docs/framework/re
 + })
 ```
 
-Learn more about the [Server Functions](https://tanstack.com/start/latest/docs/framework/react/server-functions).
+Learn more about the [Server Functions](/start/latest/docs/framework/react/server-functions).
 
 ### Server Routes ~Handlers~
 
@@ -324,7 +324,7 @@ Learn more about the [Server Functions](https://tanstack.com/start/latest/docs/f
 + })
 ```
 
-Learn more about the [Server Routes](https://tanstack.com/start/latest/docs/framework/react/server-routes).
+Learn more about the [Server Routes](/start/latest/docs/framework/react/server-routes).
 
 ### Fonts
 
