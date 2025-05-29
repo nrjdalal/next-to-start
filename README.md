@@ -364,7 +364,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   /* ... */
   ```
 
-  - ### Fetching Data
+- ### Fetching Data
 
   ```diff
   + export const Route = createFileRoute({
