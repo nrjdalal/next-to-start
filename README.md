@@ -1,5 +1,9 @@
 # Migrate from Next.js
 
+> TODO: Can change the title/headline as required.
+
+This guide provides a step-by-step process to migrate a project from the Next.js App Router to **TanStack Start**. We respect the powerful features of Next.js and aim to make this transition as smooth and professional as possible.
+
 ## Table of Contents
 
 - [Step-by-Step (Basics)](#step-by-step-basics)
@@ -18,10 +22,6 @@
   - [Server ~Actions~ Functions](#server-actions-functions)
   - [Server Routes ~Handlers~](#server-routes-handlers)
   - [Fonts](#fonts)
-
-> TODO: Can change the title/headline as required.
-
-This guide provides a step-by-step process to migrate a project from the Next.js App Router to **TanStack Start**. We respect the powerful features of Next.js and aim to make this transition as smooth and professional as possible.
 
 ## Step-by-Step (Basics)
 
