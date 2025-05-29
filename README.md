@@ -1,7 +1,23 @@
----
-id: migrate-from-next-js
-title: Migrate from Next.js
----
+# Migrate from Next.js
+
+## Table of Contents
+
+- [Step-by-Step (Basics)](#step-by-step-basics)
+  - [0. Prerequisites](#0-prerequisites)
+  - [1. Remove Next.js](#1-remove-nextjs)
+  - [2. Install Required Dependencies](#2-install-required-dependencies)
+  - [3. Update Project Configuration](#3-update-project-configuration)
+  - [4. Adapt the Root Layout](#4-adapt-the-root-layout)
+  - [5. Adapt the Home Page](#5-adapt-the-home-page)
+  - [6. Are we migrated yet?](#6-are-we-migrated-yet)
+  - [7. Verify the Migration](#7-verify-the-migration)
+- [Next Steps (Advanced)](#next-steps-advanced)
+  - [Routing Concepts](#routing-concepts)
+  - [Dynamic and Catch-All Routes](#dynamic-and-catch-all-routes)
+  - [Links](#links)
+  - [Server ~Actions~ Functions](#server-actions-functions)
+  - [Server Routes ~Handlers~](#server-routes-handlers)
+  - [Fonts](#fonts)
 
 > TODO: Can change the title/headline as required.
 
