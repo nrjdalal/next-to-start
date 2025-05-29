@@ -8,7 +8,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 ## Table of Contents
 
 - [Step-by-Step (Basics)](#step-by-step-basics)
-  - [Prerequisites](#prerequisites)
+  - [0. Prerequisites](#0-prerequisites)
   - [1. Remove Next.js](#1-remove-nextjs)
   - [2. Install Required Dependencies](#2-install-required-dependencies)
   - [3. Update Project Configuration](#3-update-project-configuration)
@@ -26,7 +26,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 # Step-by-Step (Basics)
 
-- ## Prerequisites
+- ## 0. Prerequisites
 
   You can clone the following [starter template](https://github.com/nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-start) to follow along with this guide:
 
