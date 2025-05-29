@@ -9,13 +9,13 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 - [Step-by-Step (Basics)](#step-by-step-basics)
   - [Prerequisites](#prerequisites)
-  1. [Remove Next.js](#remove-nextjs)
-  2. [Install Required Dependencies](#install-required-dependencies)
-  3. [Update Project Configuration](#update-project-configuration)
-  4. [Adapt the Root Layout](#adapt-the-root-layout)
-  5. [Adapt the Home Page](#adapt-the-home-page)
-  6. [Are we migrated yet?](#are-we-migrated-yet)
-  7. [Verify the Migration](#verify-the-migration)
+  - [1. Remove Next.js](#1-remove-nextjs)
+  - [2. Install Required Dependencies](#2-install-required-dependencies)
+  - [3. Update Project Configuration](#3-update-project-configuration)
+  - [4. Adapt the Root Layout](#4-adapt-the-root-layout)
+  - [5. Adapt the Home Page](#5-adapt-the-home-page)
+  - [6. Are we migrated yet?](#6-are-we-migrated-yet)
+  - [7. Verify the Migration](#7-verify-the-migration)
 - [Next Steps (Advanced)](#next-steps-advanced)
   - [Routing Concepts](#routing-concepts)
   - [Dynamic and Catch-All Routes](#dynamic-and-catch-all-routes)
@@ -36,32 +36,32 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   This starter is a basic Next.js application using the App Router, which we will migrate to **TanStack Start**.
 
-1. ## Remove Next.js
+- ## 1. Remove Next.js
 
-   First, uninstall Next.js and remove adjacent configuration files:
+  First, uninstall Next.js and remove adjacent configuration files:
 
-   ```shell
-   npm uninstall next
-   rm next.config.* postcss.config.*
-   ```
+  ```shell
+  npm uninstall next
+  rm next.config.* postcss.config.*
+  ```
 
-2. ## Install Required Dependencies
+- ## 2. Install Required Dependencies
 
-   **TanStack Start** leverages Vite and TanStack Router:
+  **TanStack Start** leverages Vite and TanStack Router:
 
-   ```shell
-   npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
-   ```
+  ```shell
+  npm i @tanstack/react-router@alpha @tanstack/react-start@alpha vite
+  ```
 
-   For TypeScript support and Tailwind CSS:
+  For TypeScript support and Tailwind CSS:
 
-   ```shell
-   npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
-   ```
+  ```shell
+  npm i -D @tailwindcss/postcss postcss tailwindcss vite-tsconfig-paths
+  ```
 
-   > Note: We use `@alpha` tags until the packages reach stability.
+  > Note: We use `@alpha` tags until the packages reach stability.
 
-3. ## Update Project Configuration
+- ## 3. Update Project Configuration
 
 - `package.json`
 
@@ -111,11 +111,11 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-4. ## Adapt the Root Layout
+- ## 4. Adapt the Root Layout
 
-   > **TanStack Start** uses a routing adjacent to Remix, but with some changes to make compatible with nested structures and support special features using tokens. You can see all on changes in the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts) guide.
+  > **TanStack Start** uses a routing adjacent to Remix, but with some changes to make compatible with nested structures and support special features using tokens. You can see all on changes in the [Routing Concepts](https://tanstack.com/router/latest/docs/framework/react/routing/routing-concepts) guide.
 
-   Instead of `layout.tsx`, you will create a file named `__root.tsx` in the `src/app` directory. This file will serve as the root layout for your application.
+  Instead of `layout.tsx`, you will create a file named `__root.tsx` in the `src/app` directory. This file will serve as the root layout for your application.
 
 - `src/app/layout.tsx` to `src/app/__root.tsx`
 
@@ -173,11 +173,11 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-5. ## Adapt the Home Page
+- ## 5. Adapt the Home Page
 
-   > TODO: Should we callout that it is this way since you are referencing the index route and not the layout route. Hence why the index token is being used.
+  > TODO: Should we callout that it is this way since you are referencing the index route and not the layout route. Hence why the index token is being used.
 
-   Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
+  Instead of `page.tsx`, you will create an `index.tsx` file for the `/` route.
 
 - `src/app/page.tsx` to `src/app/index.tsx`
 
@@ -210,9 +210,9 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-6. ## Are we migrated yet?
+- ## 6. Are we migrated yet?
 
-   One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
+  One last thing before we can run the development server, we need to create a router file that will dictate the behavior of TanStack Router used within **TanStack Start**.
 
 - `src/router.tsx`
 
@@ -238,17 +238,17 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   > Here you can configure everything from the default [preloading functionality](https://tanstack.com/router/latest/docs/framework/react/guide/preloading) to [caching staleness](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading).
 
-7. ## Verify the Migration
+- ## 7. Verify the Migration
 
-   Run the development server:
+  Run the development server:
 
-   ```shell
-   npm run dev
-   ```
+  ```shell
+  npm run dev
+  ```
 
-   Then visit http://localhost:3000. You should see the **TanStack Start** welcome page with its logo and documentation link.
+  Then visit http://localhost:3000. You should see the **TanStack Start** welcome page with its logo and documentation link.
 
-   > If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
+  > If you encounter issues, review the steps above and ensure file names and paths match exactly. For reference implementation, see the [after migration repository](https://github.com/nrjdalal/next-to-start).
 
 # Next Steps (Advanced)
 
