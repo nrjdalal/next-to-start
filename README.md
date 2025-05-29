@@ -65,7 +65,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
 - ## 3. Update Project Configuration
 
-- `package.json`
+  - `package.json`
 
   ```json
   {
@@ -78,7 +78,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
   }
   ```
 
-- `vite.config.ts`
+  - `vite.config.ts`
 
   ```ts
   import { tanstackStart } from "@tanstack/react-start/plugin/vite"
@@ -103,7 +103,7 @@ This guide provides a step-by-step process to migrate a project from the Next.js
 
   By default, `routesDirectory` is set to `src/routes`. If you want to maintain consistency with Next.js App Router conventions, you can set it to `src/app` instead.
 
-- `postcss.config.ts`
+  - `postcss.config.ts`
 
   ```ts
   export default {
