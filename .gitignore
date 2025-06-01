@@ -40,12 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# lock files
+bun.lock
+bun.lockb
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
 # tanstack
 /.nitro
 /.output
 /.tanstack-start
-
-# auto-generated files
-bun.lock
-routeTree.gen.ts
-tanstack-start.d.ts
